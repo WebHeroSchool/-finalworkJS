@@ -6,7 +6,7 @@ const gridContainer = document.body.children[2];
 let openCard = null;
 
 let cards = 3;
-let Click = 0;
+let click = 0;
 
 // Выбор уровня
 let onClick = function (event) {
@@ -82,9 +82,10 @@ let ourPole = function (event) {
 //Завершение игры
 let cardFront = document.getElementById("grid__card-front")
 //let cardFont = document.getElementsByClassName("grid__card-front")
-let endGame = function (event) {
-    if (cardFront.className("rotate") === false) {
-        event.target.parentElement.classList.add("rotate");
+let endGame = function (cardFront) {
+    click++;
+    if(click < 2) {
+        cardFront.target.parentElement.classList.add("rotate");
 }
 else{
     window.location.reload();
@@ -92,7 +93,6 @@ else{
 return;
 };
 
-console.log(cardFront);
 //Выполнение всех функций:
 for (let i = 0; i < optionsLevel.length; i++) {
     optionsLevel[i].addEventListener('click', onClick, false);
