@@ -47,7 +47,7 @@ random = (value) => (Math.floor(Math.random() * value));
 
 // Создание карточного поля
 let ourPole = function (event) {
-    let gamePole = "<div class='grid__card-game_pole'><div class='grid__card-front' id='grid__card-front'></div><div class='grid__card-back'></div></div>";
+    let gamePole = "<div class='grid__card-game_pole'><div class='grid__card-front'></div><div class='grid__card-back'></div></div>";
     let randomValue = random(cards);
 
     for (let i = 0; i < cards; i++) {
@@ -80,8 +80,6 @@ let ourPole = function (event) {
 };
 
 //Завершение игры
-let cardFront = document.getElementById("grid__card-front")
-//let cardFont = document.getElementsByClassName("grid__card-front")
 let endGame = function (cardFront) {
     click++;
     if(click < 2) {
